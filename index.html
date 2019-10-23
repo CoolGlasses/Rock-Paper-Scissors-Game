@@ -5,7 +5,7 @@
     <!-- javascript goes down here! -->
     
     <script>
-        let possibleMoves = ["rock", "paper", "scissors"];
+        let possibleMoves = ["Rock", "Paper", "Scissors"];
         let playerScore = 0;
         let computerScore = 0;
 
@@ -42,30 +42,30 @@
         function playRound(playerSelection, computerSelection) {
 
             let victoryString = "You win that round! " + playerSelection + " beats " + computerSelection + "!";
-            let defeatString = "You lose that roun! " + computerSelection + " beats " + playerSelection + "!";
+            let defeatString = "You lose that round! " + computerSelection + " beats " + playerSelection + "!";
             let drawString = " You tie that round! You both picked " + playerSelection;
 
-            if (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
+            if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
                 console.log(victoryString);
                 ++playerScore;
                 console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
-            } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") {
+            } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock") {
                 console.log(victoryString);
                 ++playerScore;
                 console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
-            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") {
+            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper") {
                 console.log(victoryString);
                 ++playerScore;
                 console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
-            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "rock") {
+            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock") {
                 console.log(defeatString);
                 ++computerScore;
                 console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
-            } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "scissors") {
+            } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors") {
                 console.log(defeatString);
                 ++computerScore;
                 console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
-            } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
+            } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper") {
                 console.log(defeatString);
                 ++computerScore;
                 console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
