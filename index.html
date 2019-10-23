@@ -6,35 +6,76 @@
     
     <script>
         let possibleMoves = ["rock", "paper", "scissors"];
+        let playerScore = 0;
+        let computerScore = 0;
 
+        function game() {
+            let rounds = prompt("How many rounds do you want to play? ex. if 'Best of 5', enter '5'");
+            let round;
+
+            //Reset the score to 0 to 0
+            playerScore = 0;
+            computerScore = 0;
+
+            for (round = 1; round <= rounds; round++) {
+                let playerMove = prompt("Okay, Round " + round + ". Pick one: Rock, Paper, or Scissors?")
+                let computerMove = computerPlay();
+                playRound(playerMove, computerMove);
+            }
+
+            if (playerScore > computerScore) {
+                console.log("You win! Final Score: " + playerScore + " to " + computerScore + "!");
+            } else if (playerScore < computerScore) {
+                console.log("You lose! Final Score: " + playerScore + " to " + computerScore + "!");
+            } else {
+                console.log("It's a tie! Final Score: " + playerScore + " to " + computerScore + "! Maybe next time, don't play an even number of rounds!");
+            }
+        }
+        
+        
+        
+        
         function computerPlay() {
             return possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
         }
 
         function playRound(playerSelection, computerSelection) {
 
-            let victoryString = "You win! " + playerSelection + " beats " + computerSelection + "!";
-            let defeatString = "You lose! " + computerSelection + " beats " + playerSelection + "!";
-            let drawString = " You tie! You both picked " + playerSelection;
+            let victoryString = "You win that round! " + playerSelection + " beats " + computerSelection + "!";
+            let defeatString = "You lose that roun! " + computerSelection + " beats " + playerSelection + "!";
+            let drawString = " You tie that round! You both picked " + playerSelection;
 
             if (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
-                return victoryString;
+                console.log(victoryString);
+                ++playerScore;
+                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") {
-                return victoryString;
+                console.log(victoryString);
+                ++playerScore;
+                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") {
-                return victoryString;
+                console.log(victoryString);
+                ++playerScore;
+                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "rock") {
-                return defeatString;
+                console.log(defeatString);
+                ++computerScore;
+                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "scissors") {
-                return defeatString;
+                console.log(defeatString);
+                ++computerScore;
+                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
-                return defeatString;
+                console.log(defeatString);
+                ++computerScore;
+                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else {
-                return drawString;
+                console.log(drawString);
+                console.log("Due to the tie, no one is awarded any poitns.  The score remains: You: " + playerScore + ", Computer: " + computerScore + ".");
             }
         }
 
-
+        
     
     </script>
 
