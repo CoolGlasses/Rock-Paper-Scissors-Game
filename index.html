@@ -13,28 +13,28 @@
 
         function playRound(playerSelection, computerSelection) {
 
-            let victoryString = "You win! " + playerSelection + " beats " + computerSelection; 
-            let defeatString = "You lose! " + computerSelection + " beats " + playerSelection;
+            let victoryString = "You win! " + playerSelection + " beats " + computerSelection + "!";
+            let defeatString = "You lose! " + computerSelection + " beats " + playerSelection + "!";
             let drawString = " You tie! You both picked " + playerSelection;
 
-            if (playerSelection.toLowerCase == "rock" && computerSelection == "scissors") {
+            if (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
                 return victoryString;
-            } else if (playerSelection.toLowerCase == "paper" && computerSelection == "rock")) {
+            } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") {
                 return victoryString;
-            } else if (playerSelection.toLowerCase == "scissors" && computerSelection == "paper")) {
+            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") {
                 return victoryString;
-            } else if (playerSelection.toLowerCase == "scissors" && computerSelection == "rock")) {
+            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "rock") {
                 return defeatString;
-            } else if (playerSelection.toLowerCase == "paper" && computerSelection == "scissors")) {
+            } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "scissors") {
                 return defeatString;
-            } else if (playerSelection.toLowerCase == "rock" && computerSelection == "paper")) {
+            } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
                 return defeatString;
             } else {
                 return drawString;
             }
         }
 
-        
+
     
     </script>
 
