@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head></head>
-    <body></body>
+    <body>
+
+        <button onclick="game()">Play Rock, Paper, Scissors!</button>
+
+    </body>
     <!-- javascript goes down here! -->
     
     <script>
@@ -24,11 +28,11 @@
             }
 
             if (playerScore > computerScore) {
-                console.log("You win! Final Score: " + playerScore + " to " + computerScore + "!");
+                alert("You win! Final Score: " + playerScore + " to " + computerScore + "!");
             } else if (playerScore < computerScore) {
-                console.log("You lose! Final Score: " + playerScore + " to " + computerScore + "!");
+                alert("You lose! Final Score: " + playerScore + " to " + computerScore + "!");
             } else {
-                console.log("It's a tie! Final Score: " + playerScore + " to " + computerScore + "! Maybe next time, don't play an even number of rounds!");
+                alert("It's a tie! Final Score: " + playerScore + " to " + computerScore + "! Maybe next time, don't play an even number of rounds!");
             }
         }
         
@@ -46,32 +50,39 @@
             let drawString = " You tie that round! You both picked " + playerSelection;
 
             if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
-                console.log(victoryString);
+                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                alert(victoryString);
                 ++playerScore;
-                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock") {
-                console.log(victoryString);
+                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                alert(victoryString);
                 ++playerScore;
-                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper") {
-                console.log(victoryString);
+                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                alert(victoryString);
                 ++playerScore;
-                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock") {
-                console.log(defeatString);
+                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                alert(defeatString);
                 ++computerScore;
-                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors") {
-                console.log(defeatString);
+                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                alert(defeatString);
                 ++computerScore;
-                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper") {
-                console.log(defeatString);
+                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                alert(defeatString);
                 ++computerScore;
-                console.log("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
             } else {
-                console.log(drawString);
-                console.log("Due to the tie, no one is awarded any poitns.  The score remains: You: " + playerScore + ", Computer: " + computerScore + ".");
+                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                alert(drawString);
+                alert("Due to the tie, no one is awarded any points.  The score remains: You: " + playerScore + ", Computer: " + computerScore + ".");
             }
         }
 
