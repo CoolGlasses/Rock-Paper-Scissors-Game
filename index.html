@@ -47,9 +47,13 @@
 
         document.getElementById("Play").addEventListener("click", function() {
             let gameState = document.querySelector("#gameState");
+            let userScore = document.querySelector("#yourScore");
+            let computerTotalScore = document.querySelector("#computerScore");
             gameState.textContent = "NEW GAME!  Let's Begin: Choose your move!"
             playerScore = 0;
             computerScore = 0;
+            userScore.textContent = playerScore;
+            computerTotalScore.textContent = computerScore;
         });
         
         document.getElementById("Rock").addEventListener("click", function() {
