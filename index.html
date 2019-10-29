@@ -3,11 +3,27 @@
     <head></head>
     <body>
 
-        <button id="Play">Play Rock, Paper, Scissors!</button>
-        <button id="Rock">Rock</button>
-        <button id="Paper">Paper</button>
-        <button id="Scissors">Scissors</button>
+        <div id="playBar">
+            <button id="Play">Play Rock, Paper, Scissors!</button>
+        </div>
 
+        <div id="scoreHeader">
+
+        </div>
+
+        <div id="scoreAndLogo">
+
+        </div>
+
+        <div id="buttonBar1">
+            <button id="Rock">Rock</button>
+            <button id="Paper">Paper</button>
+        </div>
+
+        <div id="buttonBar2">
+            <button id="Scissors">Scissors</button>
+        </div>
+        
     </body>
     <!-- javascript goes down here! -->
     
@@ -80,7 +96,7 @@
             return possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
         }
 
-        
+
         //Determining the outcome of a given Round
         function playRound(playerSelection, computerSelection) {
 
@@ -89,39 +105,39 @@
             let drawString = " You tie that round! You both picked " + playerSelection;
 
             if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
-                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                
                 alert(victoryString);
                 ++playerScore;
-                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+               
             } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock") {
-                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                
                 alert(victoryString);
                 ++playerScore;
-                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                
             } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper") {
-                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                
                 alert(victoryString);
                 ++playerScore;
-                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                
             } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock") {
-                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                
                 alert(defeatString);
                 ++computerScore;
-                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                
             } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors") {
-                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                
                 alert(defeatString);
                 ++computerScore;
-                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                
             } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper") {
-                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                
                 alert(defeatString);
                 ++computerScore;
-                alert("The score is now: You: " + playerScore + ", Computer: " + computerScore + ".");
+                
             } else {
-                alert("You played: " + playerSelection + ", the Computer has played " + computerSelection);
+                
                 alert(drawString);
-                alert("Due to the tie, no one is awarded any points.  The score remains: You: " + playerScore + ", Computer: " + computerScore + ".");
+                
             }
         }
 
