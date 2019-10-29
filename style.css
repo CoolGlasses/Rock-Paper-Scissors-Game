@@ -1,13 +1,78 @@
 <style>
 
+#playbar {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 
+#scoreHeader {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
 
+#yourScoreHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
+}
 
+#gameState {
+    display: flex;
+    min-width: 300px;
+    border: black;
+    border-style: dashed;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+#computerScoreHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+}
 
+#scoreAndLogo {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
 
+#yourScore {
+    display: flex;
+}
 
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+img {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+}
 
+#computerScore {
+    display: flex;
+}
+
+#buttonBar1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttonBar2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
