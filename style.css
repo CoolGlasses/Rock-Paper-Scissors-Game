@@ -1,8 +1,5 @@
-<style>
-
-#playbar {
-    display: inline-flex;
-    text-align: center;
+#playBar {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -76,12 +73,3 @@ img {
     justify-content: center;
     align-items: center;
 }
-
-
-
-
-
-
-
-
-</style>
