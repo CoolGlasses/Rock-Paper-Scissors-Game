@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Rock, Paper, Scissors!</title>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -34,27 +35,30 @@
         </div>
 
     </body>
-    <!-- javascript goes down here! -->
     
+    <!-- javascript goes down here! -->
     <script>
-        document.getElementById("Play").addEventListener("click", newGame() ); //Build the board?
-        
-        document.getElementById("Rock").addEventListener("click", function() {
-            playerMove("Rock");
-            play();
-        }); 
-        document.getElementById("Paper").addEventListener("click", function() {
-            playerMove("Paper");
-            play();
-        }); 
-        document.getElementById("Scissors").addEventListener("click", function() {
-            playerMove("Scissors");
-            play();
-        }); 
-        
         let possibleMoves = ["Rock", "Paper", "Scissors"];
         let playerScore = 0;
         let computerScore = 0;
+
+
+        document.getElementById("Play").addEventListener("click", newGame() ); //Build the board?
+        
+        document.getElementById("Rock").addEventListener("click", function() {
+            let playerMoveString = "Rock";
+            play(playerMoveString);
+        }); 
+        document.getElementById("Paper").addEventListener("click", function() {
+            let playerMoveString = "Paper";
+            play(playerMoveString);
+        }); 
+        document.getElementById("Scissors").addEventListener("click", function() {
+            let playerMoveString = "Scissors";
+            play(playerMoveString);
+        }); 
+        
+       
 
         function newGame() {
 
@@ -65,11 +69,11 @@
         }
 
         //Submit a move from Player and the Computer to begin a round
-        function play() {
+        function play(playerMoveString) {
             let computerMove = computerPlay();
-            playRound(playerMove, computerMove);
+            playRound(playerMoveString, computerMove);
 
-            if gameOver() {
+            if (gameOver()) {
                 result();
             }
 
@@ -77,7 +81,7 @@
 
         //Is the game over?
         function gameOver() {
-            if (playerScore != 5) || (computerScore != 5) {
+            if ((playerScore != 5) || (computerScore != 5)) {
                 return false;
             } else {
                 return true;
@@ -86,18 +90,15 @@
 
         //Determining the Result
         function result() {
-            if (playerScore > computerScore) {
-                alert("You win! Final Score: " + playerScore + " to " + computerScore + "!");
-            } else if (playerScore < computerScore) {
-                alert("You lose! Final Score: " + playerScore + " to " + computerScore + "!");
-            } else {
-                alert("It's a tie! Final Score: " + playerScore + " to " + computerScore + "! Maybe next time, don't play an even number of rounds!");
-            }
-        }
+            let gameState = document.querySelector("#gameState");
 
-        //Capturing the Move Choice by the Player
-        function playerMove(buttonID) {
-            let playerMove = buttonID;
+            if (playerScore > computerScore) {
+                gameState.textContent = "You win! Final Score: " + playerScore + " to " + computerScore + "!";
+            } else if (playerScore < computerScore) {
+                gameState.textContent = "You lose! Final Score: " + playerScore + " to " + computerScore + "!";
+            } else {
+                gameState.textContent = "It's a tie! Final Score: " + playerScore + " to " + computerScore + "!";
+            }
         }
         
         //Determining the Computer's Move for that Round
@@ -112,40 +113,41 @@
             let victoryString = "You win that round! " + playerSelection + " beats " + computerSelection + "!";
             let defeatString = "You lose that round! " + computerSelection + " beats " + playerSelection + "!";
             let drawString = " You tie that round! You both picked " + playerSelection;
+            let gameState = document.querySelector("#gameState");
 
-            if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
+            if (playerSelection == "Rock" && computerSelection == "Scissors") {
                 
-                alert(victoryString);
+                gameState.textContent = victoryString;
                 ++playerScore;
                
-            } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock") {
+            } else if (playerSelection == "Paper" && computerSelection == "Rock") {
                 
-                alert(victoryString);
+                gameState.textContent = victoryString;
                 ++playerScore;
                 
-            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper") {
+            } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
                 
-                alert(victoryString);
+                gameState.textContent = victoryString;
                 ++playerScore;
                 
-            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock") {
+            } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
                 
-                alert(defeatString);
+                gameState.textContent = defeatString;
                 ++computerScore;
                 
-            } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors") {
+            } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
                 
-                alert(defeatString);
+                gameState.textContent = defeatString;
                 ++computerScore;
                 
-            } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper") {
+            } else if (playerSelection == "Rock" && computerSelection == "Paper") {
                 
-                alert(defeatString);
+                gameState.textContent = defeatString;
                 ++computerScore;
                 
             } else {
                 
-                alert(drawString);
+                gameState.textContent = drawString;
                 
             }
         }
