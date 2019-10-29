@@ -45,7 +45,12 @@
         let computerScore = 0;
 
 
-        document.getElementById("Play").addEventListener("click", newGame() ); //Build the board?
+        document.getElementById("Play").addEventListener("click", function() {
+            let gameState = document.querySelector("#gameState");
+            gameState.textContent = "NEW GAME!  Let's Begin: Choose your move!"
+            playerScore = 0;
+            computerScore = 0;
+        });
         
         document.getElementById("Rock").addEventListener("click", function() {
             let playerMoveString = "Rock";
@@ -60,16 +65,6 @@
             play(playerMoveString);
         }); 
         
-       
-
-        function newGame() {
-
-            //Reset the score to 0 to 0
-            playerScore = 0;
-            computerScore = 0;
-           
-
-        }
 
         //Submit a move from Player and the Computer to begin a round
         function play(playerMoveString) {
@@ -78,16 +73,18 @@
 
             if (gameOver()) {
                 result();
+            } else {
+                //Nothing!
             }
 
         }
 
         //Is the game over?
         function gameOver() {
-            if ((playerScore == 5) || (computerScore == 5)) {
-                return false;
-            } else {
+            if ((playerScore === 5) || (computerScore === 5)) {
                 return true;
+            } else {
+                return false;
             }
         }
 
