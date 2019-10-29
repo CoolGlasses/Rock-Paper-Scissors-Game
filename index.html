@@ -14,7 +14,7 @@
         <div id="scoreHeader">
             <div id="yourScoreHeader">Your Score</div>
             <div id="gameState"></div>
-            <div id="computerScoreHeader">Coputer Score</div>
+            <div id="computerScoreHeader">Computer Score</div>
         </div>
 
         <div id="scoreAndLogo">
@@ -114,40 +114,56 @@
             let defeatString = "You lose that round! " + computerSelection + " beats " + playerSelection + "!";
             let drawString = " You tie that round! You both picked " + playerSelection;
             let gameState = document.querySelector("#gameState");
+            let userScore = document.querySelector("#yourScore");
+            let computerTotalScore = document.querySelector("#computerScore");
 
             if (playerSelection == "Rock" && computerSelection == "Scissors") {
                 
                 gameState.textContent = victoryString;
                 ++playerScore;
+                userScore.textContent = playerScore;
+                computerTotalScore.textContent = computerScore;
                
             } else if (playerSelection == "Paper" && computerSelection == "Rock") {
                 
                 gameState.textContent = victoryString;
                 ++playerScore;
-                
+                userScore.textContent = playerScore;
+                computerTotalScore.textContent = computerScore;
+
             } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
                 
                 gameState.textContent = victoryString;
                 ++playerScore;
-                
+                userScore.textContent = playerScore;
+                computerTotalScore.textContent = computerScore;
+
             } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
                 
                 gameState.textContent = defeatString;
                 ++computerScore;
+                userScore.textContent = playerScore;
+                computerTotalScore.textContent = computerScore;
                 
             } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
                 
                 gameState.textContent = defeatString;
                 ++computerScore;
+                userScore.textContent = playerScore;
+                computerTotalScore.textContent = computerScore;
                 
             } else if (playerSelection == "Rock" && computerSelection == "Paper") {
                 
                 gameState.textContent = defeatString;
                 ++computerScore;
+                userScore.textContent = playerScore;
+                computerTotalScore.textContent = computerScore;
                 
             } else {
                 
                 gameState.textContent = drawString;
+                userScore.textContent = playerScore;
+                computerTotalScore.textContent = computerScore;
                 
             }
         }
