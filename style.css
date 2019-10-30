@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     padding-right: 30px;
+    min-width: 132px;
 }
 
 #gameState {
@@ -43,6 +44,9 @@
 
 #yourScore {
     display: flex;
+    min-width: 132px;
+    padding-right: 30px;
+    justify-content: center;
 }
 
 #logo {
@@ -60,6 +64,9 @@ img {
 
 #computerScore {
     display: flex;
+    min-width: 132px;
+    padding-left: 30px;
+    justify-content: center;
 }
 
 #buttonBar1 {
@@ -72,4 +79,24 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.selectionBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 149px;
+    border: black;
+    border-style: dashed;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#yourSelection {
+    border-right-width: 0.5px;
+}
+
+#computerSelection {
+    border-left-width: 0.5px;
 }
