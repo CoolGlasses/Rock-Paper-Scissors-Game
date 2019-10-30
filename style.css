@@ -100,3 +100,24 @@ img {
 #computerSelection {
     border-left-width: 0.5px;
 }
+
+#rockContainer {
+    display: flex;
+    min-width: 132px;
+    padding-right: 30px;
+    justify-content: center;
+}
+
+#scissorsContainer {
+    display: flex;
+    min-width: 132px;
+    padding-left: 30px;
+    justify-content: center;
+}
+
+#paperContainer {
+    display: flex;
+    min-width: 132px;
+    padding-top: 30px;
+    justify-content: center;
+}

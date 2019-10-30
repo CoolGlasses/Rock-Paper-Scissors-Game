@@ -8,7 +8,7 @@
     <body>
 
         <div id="playBar">
-            <button id="Play">Play Rock, Paper, Scissors!</button>
+            <button id="Play">New Game!</button>
         </div>
 
         <div id="scoreHeader">
@@ -26,14 +26,22 @@
         </div>
 
         <div id="buttonBar1">
-            <button id="Rock">Rock</button>
+            <div id="rockContainer">
+                <button id="Rock">Rock</button>
+            </div>
+
             <div id="yourSelection" class="selectionBox"></div>
             <div id="computerSelection" class="selectionBox"></div>
-            <button id="Scissors">Scissors</button>
+            
+            <div id="scissorsContainer">
+                <button id="Scissors">Scissors</button>
+            </div>
         </div>
 
         <div id="buttonBar2">
-            <button id="Paper">Paper</button>   
+            <div id="paperContainer">
+                <button id="Paper">Paper</button>
+            </div>
         </div>
 
     </body>
@@ -49,7 +57,7 @@
             let gameState = document.querySelector("#gameState");
             let userScore = document.querySelector("#yourScore");
             let computerTotalScore = document.querySelector("#computerScore");
-            gameState.textContent = "NEW GAME!  Let's Begin: Choose your move!"
+            gameState.textContent = "Let's Begin: Choose your move!"
             playerScore = 0;
             computerScore = 0;
             userScore.textContent = playerScore;
@@ -58,14 +66,20 @@
         
         document.getElementById("Rock").addEventListener("click", function() {
             let playerMoveString = "Rock";
+            let playerMoveChoice = document.querySelector('#yourSelection');
+            playerMoveChoice.textContent = "Rock";
             play(playerMoveString);
         }); 
         document.getElementById("Paper").addEventListener("click", function() {
             let playerMoveString = "Paper";
+            let playerMoveChoice = document.querySelector('#yourSelection');
+            playerMoveChoice.textContent = "Paper";
             play(playerMoveString);
         }); 
         document.getElementById("Scissors").addEventListener("click", function() {
             let playerMoveString = "Scissors";
+            let playerMoveChoice = document.querySelector('#yourSelection');
+            playerMoveChoice.textContent = "Scissors";
             play(playerMoveString);
         }); 
         
