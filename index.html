@@ -121,7 +121,10 @@
         
         //Determining the Computer's Move for that Round
         function computerPlay() {
-            return possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
+            let computerSelection = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
+            let computerMoveChoice = document.querySelector('#computerSelection');
+            computerMoveChoice.textContent = computerSelection;
+            return computerSelection;
         }
 
 
@@ -134,6 +137,7 @@
             let gameState = document.querySelector("#gameState");
             let userScore = document.querySelector("#yourScore");
             let computerTotalScore = document.querySelector("#computerScore");
+            
 
             if (playerSelection == "Rock" && computerSelection == "Scissors") {
                 
